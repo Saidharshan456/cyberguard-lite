@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberGuard Lite | Web Security Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #0b1117;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 900px;
+            margin: auto;
+            padding: 35px 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #00e676;
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #90a4ae;
+        }
+
+        .score-box {
+            background: #121c24;
+            border: 1px solid #26343d;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .score {
+            font-size: 65px;
+            font-weight: bold;
+            color: #00e676;
+        }
+
+        .score-label {
+            color: #90a4ae;
+            letter-spacing: 2px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: #121c24;
+            border: 1px solid #26343d;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            color: #00e676;
+            font-weight: bold;
+        }
+
+        .password-box {
+            background: #121c24;
+            border: 1px solid #26343d;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        input {
+            width: min(100%, 350px);
+            padding: 13px;
+            background: #1c2933;
+            color: white;
+            border: 1px solid #344650;
+            border-radius: 7px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #00e676;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 7px;
+            background: #00e676;
+            color: #07100b;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .result {
+            margin-top: 18px;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            color: #607d8b;
+            margin-top: 35px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .score {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🛡️ CYBERGUARD LITE</h1>
+        <p>Web Security Dashboard</p>
+    </header>
+
+    <div class="score-box">
+        <div class="score">{{ score }}/100</div>
+        <div class="score-label">SECURITY SCORE</div>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-title">🔥 Firewall</div>
+            <div class="status">● OK</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📶 Wi-Fi Security</div>
+            <div class="status">● OK</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🔐 Login Protection</div>
+            <div class="status">● OK</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🌐 Web Security</div>
+            <div class="status">● ACTIVE</div>
+        </div>
+
+    </div>
+
+    <div class="password-box">
+
+        <h2>🔑 Password Strength Tester</h2>
+
+        <p style="color:#90a4ae;">
+            Test a password locally. Don't enter a real password.
+        </p>
+
+        <form method="POST">
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter a test password"
+            >
+
+            <br>
+
+            <button type="submit">
+                CHECK PASSWORD
+            </button>
+
+        </form>
+
+        <div class="result">
+            Password Strength:
+            <strong>{{ password_result }}</strong>
+        </div>
+
+    </div>
+
+    <footer>
+        CyberGuard Lite • Defensive Security Project
+    </footer>
+
+</div>
+
+</body>
+</html>
