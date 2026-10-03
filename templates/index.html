@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CyberGuard Lite | Web Security Dashboard</title>
+    <title>CyberGuard Lite - Free Web Security Dashboard</title>
+
+    <meta
+        name="description"
+        content="CyberGuard Lite is a free web security dashboard with password strength testing and defensive cybersecurity tools."
+    >
+
+    <meta
+        name="keywords"
+        content="CyberGuard Lite, cybersecurity, web security, password strength, security dashboard"
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="CyberGuard Lite - Web Security Dashboard">
+
+    <meta
+        property="og:description"
+        content="Explore CyberGuard Lite's defensive cybersecurity tools and password strength tester."
+    >
+
+    <meta property="og:type" content="website">
+
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -38,6 +63,7 @@
 
         header p {
             color: #90a4ae;
+            font-size: 16px;
         }
 
         .score-box {
@@ -58,6 +84,7 @@
         .score-label {
             color: #90a4ae;
             letter-spacing: 2px;
+            margin-top: 8px;
         }
 
         .cards {
@@ -71,6 +98,12 @@
             border: 1px solid #26343d;
             border-radius: 12px;
             padding: 20px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            border-color: #00e676;
+            transform: translateY(-2px);
         }
 
         .card-title {
@@ -92,6 +125,14 @@
             text-align: center;
         }
 
+        .password-box h2 {
+            margin-top: 0;
+        }
+
+        .password-box p {
+            color: #90a4ae;
+        }
+
         input {
             width: min(100%, 350px);
             padding: 13px;
@@ -100,6 +141,7 @@
             border: 1px solid #344650;
             border-radius: 7px;
             outline: none;
+            font-size: 15px;
         }
 
         input:focus {
@@ -115,6 +157,7 @@
             color: #07100b;
             font-weight: bold;
             cursor: pointer;
+            font-size: 14px;
         }
 
         button:hover {
@@ -126,6 +169,16 @@
             font-size: 18px;
         }
 
+        .info {
+            background: #101820;
+            border-left: 3px solid #00e676;
+            padding: 15px;
+            margin-top: 25px;
+            text-align: left;
+            color: #b0bec5;
+            line-height: 1.5;
+        }
+
         footer {
             text-align: center;
             color: #607d8b;
@@ -134,6 +187,7 @@
         }
 
         @media (max-width: 600px) {
+
             header h1 {
                 font-size: 30px;
             }
@@ -145,84 +199,180 @@
             .score {
                 font-size: 50px;
             }
+
+            .container {
+                width: 94%;
+            }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
 <div class="container">
 
+
     <header>
+
         <h1>🛡️ CYBERGUARD LITE</h1>
-        <p>Web Security Dashboard</p>
+
+        <p>
+            Free Defensive Web Security Dashboard
+        </p>
+
     </header>
 
+
     <div class="score-box">
-        <div class="score">{{ score }}/100</div>
-        <div class="score-label">SECURITY SCORE</div>
+
+        <div class="score">
+            {{ score }}/100
+        </div>
+
+        <div class="score-label">
+            SECURITY SCORE
+        </div>
+
     </div>
+
 
     <div class="cards">
 
-        <div class="card">
-            <div class="card-title">🔥 Firewall</div>
-            <div class="status">● OK</div>
-        </div>
 
         <div class="card">
-            <div class="card-title">📶 Wi-Fi Security</div>
-            <div class="status">● OK</div>
+
+            <div class="card-title">
+                🔥 Firewall
+            </div>
+
+            <div class="status">
+                ● Web Check Available
+            </div>
+
         </div>
 
-        <div class="card">
-            <div class="card-title">🔐 Login Protection</div>
-            <div class="status">● OK</div>
-        </div>
 
         <div class="card">
-            <div class="card-title">🌐 Web Security</div>
-            <div class="status">● ACTIVE</div>
+
+            <div class="card-title">
+                📶 Wi-Fi Security
+            </div>
+
+            <div class="status">
+                ● Security Guidance
+            </div>
+
         </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                🔐 Login Protection
+            </div>
+
+            <div class="status">
+                ● Protection Enabled
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                🌐 Web Security
+            </div>
+
+            <div class="status">
+                ● ACTIVE
+            </div>
+
+        </div>
+
 
     </div>
 
+
     <div class="password-box">
 
-        <h2>🔑 Password Strength Tester</h2>
 
-        <p style="color:#90a4ae;">
-            Test a password locally. Don't enter a real password.
+        <h2>
+            🔑 Password Strength Tester
+        </h2>
+
+
+        <p>
+            Test a password locally.
+            Never enter a real password.
         </p>
 
+
         <form method="POST">
+
 
             <input
                 type="password"
                 name="password"
                 placeholder="Enter a test password"
+                autocomplete="off"
             >
 
+
             <br>
+
 
             <button type="submit">
                 CHECK PASSWORD
             </button>
 
+
         </form>
 
+
         <div class="result">
+
             Password Strength:
-            <strong>{{ password_result }}</strong>
+
+            <strong>
+                {{ password_result }}
+            </strong>
+
         </div>
+
 
     </div>
 
+
+    <div class="info">
+
+        🛡️ <strong>About CyberGuard Lite</strong>
+
+        <br><br>
+
+        CyberGuard Lite is a defensive cybersecurity project
+        designed to help users understand basic security practices,
+        password strength, and web security concepts.
+
+    </div>
+
+
     <footer>
+
         CyberGuard Lite • Defensive Security Project
+
+        <br><br>
+
+        Built for cybersecurity education and awareness.
+
     </footer>
+
 
 </div>
 
 </body>
+
 </html>
