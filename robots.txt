@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cyberguard-lite.onrender.com/sitemap.xml
