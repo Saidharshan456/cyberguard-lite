@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +24,8 @@
 
     <meta name="robots" content="index, follow">
 
-    <meta
-        property="og:title"
-        content="CyberGuard Lite - Web Security Dashboard"
-    >
+    <meta property="og:title"
+          content="CyberGuard Lite - Web Security Dashboard">
 
     <meta
         property="og:description"
@@ -56,6 +53,21 @@
             max-width: 900px;
             margin: auto;
             padding: 35px 0;
+        }
+
+        .nav {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .nav a {
+            color: #00e676;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
         }
 
         header {
@@ -224,6 +236,19 @@
 <div class="container">
 
 
+    <!-- Navigation -->
+
+    <div class="nav">
+
+        <a href="/about">
+            About CyberGuard Lite →
+        </a>
+
+    </div>
+
+
+    <!-- Header -->
+
     <header>
 
         <h1>🛡️ CYBERGUARD LITE</h1>
@@ -234,6 +259,8 @@
 
     </header>
 
+
+    <!-- Security Score -->
 
     <div class="score-box">
 
@@ -247,6 +274,8 @@
 
     </div>
 
+
+    <!-- Security Cards -->
 
     <div class="cards">
 
@@ -306,8 +335,9 @@
     </div>
 
 
-    <div class="password-box">
+    <!-- Password Tester -->
 
+    <div class="password-box">
 
         <h2>
             🔑 Password Strength Tester
@@ -322,7 +352,6 @@
 
         <form method="POST">
 
-
             <input
                 type="password"
                 name="password"
@@ -330,14 +359,11 @@
                 autocomplete="off"
             >
 
-
             <br>
-
 
             <button type="submit">
                 CHECK PASSWORD
             </button>
-
 
         </form>
 
@@ -356,6 +382,8 @@
     </div>
 
 
+    <!-- About -->
+
     <div class="info">
 
         🛡️ <strong>About CyberGuard Lite</strong>
@@ -368,6 +396,8 @@
 
     </div>
 
+
+    <!-- Footer -->
 
     <footer>
 
