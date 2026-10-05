@@ -29,10 +29,8 @@ def check_password(password):
 
     if score <= 2:
         return "Weak"
-
     elif score <= 4:
         return "Moderate"
-
     else:
         return "Strong"
 
@@ -57,10 +55,8 @@ def home():
 
             if password_result == "Strong":
                 score = 100
-
             elif password_result == "Moderate":
                 score = 90
-
             else:
                 score = 75
 
@@ -69,9 +65,16 @@ def home():
         score=score,
         password_result=password_result
     )
+
+
+# -----------------------------------
+# About Page
+# -----------------------------------
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
 
 # -----------------------------------
 # Robots.txt
@@ -125,4 +128,3 @@ def sitemap():
 
 if __name__ == "__main__":
     app.run(debug=True)
-S
