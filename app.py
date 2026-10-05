@@ -69,7 +69,9 @@ def home():
         score=score,
         password_result=password_result
     )
-
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 # -----------------------------------
 # Robots.txt
@@ -104,6 +106,10 @@ def sitemap():
         <loc>https://cyberguard-lite.onrender.com/</loc>
     </url>
 
+    <url>
+        <loc>https://cyberguard-lite.onrender.com/about</loc>
+    </url>
+
 </urlset>
 """
 
@@ -119,3 +125,4 @@ def sitemap():
 
 if __name__ == "__main__":
     app.run(debug=True)
+S
